@@ -1,0 +1,28 @@
+{
+    "name": "php-taxonomy/multitaxonomy-doctrine-dbal-schema",
+    "description": "Multitaxonomy (schema for Doctrine DBAL)",
+    "keywords": ["taxonomy", "classification", "category", "tag", "dbal", "doctrine-dbal", "database-schema"],
+    "homepage": "https://github.com/php-taxonomy/multitaxonomy-doctrine-dbal-schema",
+    "license": "ISC",
+    "authors": [
+        {"name": "Jean-bernard Addor"},
+        {"name": "Community", "homepage": "https://github.com/php-taxonomy/multitaxonomy-doctrine-dbal-schema"}
+    ],
+    "require": {
+        "php": "^5.0",
+        "doctrine/doctrine-bundle": "^1.6"
+    },
+    "require-dev": {
+    },
+    "suggest": {
+    },
+    "autoload": {
+        "psr-4": { "PhpTaxonomy\\MultiTaxonomy\\Doctrine\\DBAL\\Schema\\": "" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}
+
