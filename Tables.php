@@ -1,15 +1,14 @@
 <?php
 
-namespace PhpTaxonomy\MultiTaxonomy\Doctrine\DBAL\Schema;
+namespace PhpTaxonomy\MultiTaxonomy\Doctrine\DBAL;
 
-use Doctrine\DBAL\Schema\Schema;
-use Doctrine\DBAL\Schema\Table;
+use Doctrine\DBAL; // Schema\Schema Schema\Table
 
-class Tables
+class Schema
 {
     protected $schema;
 
-    function __construct(Schema $schema)
+    function __construct(DBAL\Schema\Schema $schema)
     {
         $this->schema = $schema;
     }
@@ -23,7 +22,7 @@ class Tables
         return $TaxoTable;
     }
     
-    function LinkTaxoTaxo(Table $TaxoTable) {
+    function LinkTaxoTaxo(DBAL\Schema\Table $TaxoTable) {
         $LinkTaxoTaxo = $this->schema->createTable("taxonomy_tree");
         $LinkTaxoTaxo->addColumn("uuid", "guid");
         $LinkTaxoTaxo->setPrimaryKey(["uuid"]);
@@ -44,7 +43,7 @@ class Tables
         return $LinkTaxoTaxo;
     }
     
-    function LinkTaxonomyUser(Table $LinkTaxoTaxo, $UserTableName) {
+    function LinkTaxonomyUser(DBAL\Schema\Table $LinkTaxoTaxo, $UserTableName) {
         $LinkTaxonomyUser = $this->schema->createTable("link_taxonomy_tree_user");
         $LinkTaxonomyUser->addColumn("uuid", "guid"); // taxonomy encoded with the user uuid
         $LinkTaxonomyUser->setPrimaryKey(["uuid"]);
@@ -66,7 +65,7 @@ class Tables
         return $LinkTaxonomyUser;
     }
     
-    function LinkUrlTaxo(Table $OwnedUrlTable, Table $TaxoTable) {
+    function LinkUrlTaxo(DBAL\Schema\Table $OwnedUrlTable, DBAL\Schema\Table $TaxoTable) {
         $LinkUrlTaxo = $this->schema->createTable("link_owned_url_taxonomy");
         $LinkUrlTaxo->addColumn("uuid", "guid");
         $LinkUrlTaxo->setPrimaryKey(["uuid"]);
