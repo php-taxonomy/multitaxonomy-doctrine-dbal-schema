@@ -17,7 +17,7 @@
     "suggest": {
     },
     "autoload": {
-        "psr-4": { "PhpTaxonomy\\MultiTaxonomy\\Doctrine\\DBAL\\Schema\\": "" }
+        "psr-4": { "PhpTaxonomy\\MultiTaxonomy\\Doctrine\\DBAL\\": "" }
     },
     "extra": {
         "branch-alias": {
