@@ -1,7 +1,7 @@
 {
     "name": "php-taxonomy/multitaxonomy-doctrine-dbal-schema",
     "description": "Multitaxonomy (schema for Doctrine DBAL)",
-    "keywords": ["taxonomy", "classification", "category", "tag", "dbal", "doctrine-dbal", "database-schema"],
+    "keywords": ["taxonomy", "classification", "category", "tag", "dbal", "doctrine-dbal", "database-schema", "snowyowl"],
     "homepage": "https://github.com/php-taxonomy/multitaxonomy-doctrine-dbal-schema",
     "license": "ISC",
     "authors": [
