@@ -10,7 +10,7 @@
     ],
     "require": {
         "php": "^5.0",
-        "doctrine/doctrine-bundle": "^1.6"
+        "doctrine/dbal": "^2.5"
     },
     "require-dev": {
     },
