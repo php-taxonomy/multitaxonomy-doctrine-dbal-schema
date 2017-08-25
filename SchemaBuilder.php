@@ -44,7 +44,7 @@ class SchemaBuilder
         return $LinkTaxoTaxo;
     }
     
-    function LinkTaxonomyUser(Table $LinkTaxoTaxo, $UserTableName) {
+    function LinkTaxonomyUser(Table $LinkTaxoTaxo, Table $User) {
         $LinkTaxonomyUser = $this->schema->createTable("link_taxonomy_tree_user");
         $LinkTaxonomyUser->addColumn("uuid", "guid"); // taxonomy encoded with the user uuid
         $LinkTaxonomyUser->setPrimaryKey(["uuid"]);
@@ -53,7 +53,7 @@ class SchemaBuilder
         $LinkTaxonomyUser->addForeignKeyConstraint($LinkTaxoTaxo, ["taxonomy_tree_uuid"], ["uuid"], ["onUpdate" => "CASCADE", "onDelete" => "CASCADE"], "taxonomy_tree_uuid_fk");
         $LinkTaxonomyUser->addColumn("user_uuid", "guid");
         $LinkTaxonomyUser->addIndex(["user_uuid"], "link_taxonomy_tree_user_user");
-        $LinkTaxonomyUser->addForeignKeyConstraint($UserTableName, ["user_uuid"], ["uuid"], ["onUpdate" => "CASCADE", "onDelete" => "CASCADE"], "user_uuid_fk");
+        $LinkTaxonomyUser->addForeignKeyConstraint($User, ["user_uuid"], ["uuid"], ["onUpdate" => "CASCADE", "onDelete" => "CASCADE"], "user_uuid_fk");
         $LinkTaxonomyUser->addUniqueIndex(["taxonomy_tree_uuid", "user_uuid"], "link_taxonomy_tree_user_unique_taxonomy_user");
         //^ Optional constraint of unicity, but essential here for link_owned_url_user.
         //^ https://www.postgresql.org/docs/9.2/static/ddl-constraints.html
