@@ -9,7 +9,7 @@
         {"name": "Community", "homepage": "https://github.com/php-taxonomy/multitaxonomy-doctrine-dbal-schema"}
     ],
     "require": {
-        "php": "^5.0",
+        "php": "^5.0 || ^7.0",
         "doctrine/dbal": "^2.5"
     },
     "require-dev": {
